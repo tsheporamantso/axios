@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Loading from "../Pages/Loading";
+
 const url = "https://www.course-api.com/react-store-products";
 
 const FirstRequest = () => {
