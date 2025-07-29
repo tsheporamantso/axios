@@ -1,5 +1,11 @@
+import Setup from "./components/FirstRequest";
+
 function App() {
-  return <></>;
+  return (
+    <>
+      <Setup />
+    </>
+  );
 }
 
 export default App;
