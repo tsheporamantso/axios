@@ -32,12 +32,20 @@ const FirstRequest = () => {
   }
 
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: "1rem",
+      }}
+    >
       {products.map((item) => {
         return (
           <article key={item.id}>
             <img
-              style={{ width: "250px", height: "250px" }}
+              style={{ width: "250px", height: "250px", borderRadius: "15px" }}
               src={item.image}
               alt={item.name}
             />
