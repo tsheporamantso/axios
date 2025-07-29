@@ -4,7 +4,7 @@ import Loading from "../Pages/Loading";
 import { SET_ISLOADING, GET_USERS } from "../hooks/actions";
 import reducer from "../hooks/reducer";
 
-// const productsUrl = "https://www.course-api.com/react-store-products";
+const productsUrl = "https://www.course-api.com/react-store-products";
 const randomUserUrl = "https://randomuser.me/api";
 
 const defaultState = {
@@ -19,6 +19,8 @@ const GlobalInstance = () => {
     dispatch({ type: SET_ISLOADING });
     try {
       const resp = await axios(randomUserUrl);
+      const { data } = await axios(productsUrl);
+      console.log(data);
       dispatch({ type: GET_USERS, payload: resp.data.results[0] });
     } catch (error) {
       console.error("Failed to fetch user", error);
