@@ -1,4 +1,4 @@
-import Setup from "./components/FirstRequest";
+import Setup from "./components/Headers";
 
 function App() {
   return (
