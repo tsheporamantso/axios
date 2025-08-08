@@ -45,6 +45,7 @@ const GlobalInstance = () => {
         alignItems: "center",
       }}
     >
+      <h1>Global Instance</h1>
       <button className="btn btn-block" onClick={fetchUser}>
         Generate User
       </button>
