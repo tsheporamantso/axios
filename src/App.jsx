@@ -1,4 +1,4 @@
-import Setup from "./components/Interceptors";
+import Setup from "./components/FirstRequest";
 import { ToastContainer } from "react-toastify";
 import "./axios/global";
 

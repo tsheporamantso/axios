@@ -11,8 +11,8 @@ const FirstRequest = () => {
   const fetchProducts = async () => {
     setIsLoading(true);
     try {
-      const resp = await axios.get(url);
-      setProducts(resp.data);
+      const { data } = await axios.get(url);
+      setProducts(data);
       setIsLoading(false);
     } catch (error) {
       setIsLoading(true);
