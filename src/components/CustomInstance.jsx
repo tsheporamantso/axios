@@ -2,25 +2,15 @@ import React, { useEffect, useReducer } from "react";
 import authFetch from "../axios/custom";
 import Loading from "../Pages/Loading";
 import { toast } from "react-toastify";
+import { GET_PRODUCTS } from "../hooks/actions";
+import reducer from "../hooks/reducer";
 import axios from "axios";
 
 const randomUserUrl = "https://randomuser.me/api";
 
-const GET_PRODUCTS = "GET_PRODUCTS";
-const SET_ISLOADING = "SET_ISLOADING";
-
 const defaultState = {
   products: [],
   isLoading: true,
-};
-
-const reducer = (state, action) => {
-  if (action.type === GET_PRODUCTS) {
-    return { ...state, products: action.payload, isLoading: false };
-  }
-  if (action.type === SET_ISLOADING) {
-    return { ...state, isLoading: true };
-  }
 };
 
 const CustomInstance = () => {
@@ -29,13 +19,9 @@ const CustomInstance = () => {
   const fetchData = async () => {
     try {
       const { data } = await authFetch("/react-store-products");
-
       const resp = await axios(randomUserUrl);
-
-      console.log(resp.data.results);
-
+      console.log(resp.data);
       toast.success("Data fetched successfully");
-
       dispatch({ type: GET_PRODUCTS, payload: data });
     } catch (error) {
       toast.error(error.response.data.msg);
