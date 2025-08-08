@@ -1,4 +1,4 @@
-import Setup from "./components/Headers";
+import Setup from "./components/PostRequest";
 import { ToastContainer } from "react-toastify";
 import "./axios/global";
 

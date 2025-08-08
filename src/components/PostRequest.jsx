@@ -27,11 +27,11 @@ const PostRequest = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const resp = await axios.post(url, {
+      const { data } = await axios.post(url, {
         name: state.name,
         email: state.email,
       });
-      toast.success(resp.data.msg);
+      toast.success(data.msg);
     } catch (error) {
       toast.error(error.response.data?.msg);
     }
