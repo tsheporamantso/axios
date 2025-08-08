@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import { useReducer } from "react";
 import axios from "axios";
 
 const url = "https://icanhazdadjoke.com/";
@@ -20,18 +20,16 @@ const Headers = () => {
 
   const fetchJoke = async () => {
     try {
-      const resp = await axios.get(url, {
+      const { data } = await axios.get(url, {
         headers: {
           Accept: "application/json",
         },
       });
-      dispatch({ type: GENERATE_JOKE, payload: resp.data.joke });
+      dispatch({ type: GENERATE_JOKE, payload: data.joke });
     } catch (error) {
       throw new Error(`Something went wrong ${error}`);
     }
   };
-
-  console.log(state.joke);
 
   return (
     <section className="section text-center">
