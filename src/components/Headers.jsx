@@ -1,5 +1,6 @@
 import { useReducer } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const url = "https://icanhazdadjoke.com/";
 
@@ -27,7 +28,7 @@ const Headers = () => {
       });
       dispatch({ type: GENERATE_JOKE, payload: data.joke });
     } catch (error) {
-      throw new Error(`Something went wrong ${error}`);
+      toast.error(error.message);
     }
   };
 
