@@ -18,10 +18,10 @@ const GlobalInstance = () => {
   const fetchUser = async () => {
     dispatch({ type: SET_ISLOADING });
     try {
-      const resp = await axios(randomUserUrl);
-      const { data } = await axios(productsUrl);
-      console.log(data);
-      dispatch({ type: GET_USERS, payload: resp.data.results[0] });
+      const { data } = await axios(randomUserUrl);
+      const resp = await axios(productsUrl);
+      console.log(resp.data);
+      dispatch({ type: GET_USERS, payload: data.results[0] });
     } catch (error) {
       console.error("Failed to fetch user", error);
     }
