@@ -5,7 +5,7 @@ import { SET_ISLOADING, GET_USERS } from "../hooks/actions";
 import reducer from "../hooks/reducer";
 
 const productsUrl = "https://www.course-api.com/react-store-products";
-const randomUserUrl = "https://randomuser.me/api";
+const randomUserUrl = "/api"; // There is a base url on  axios folder/global file as default.
 
 const defaultState = {
   users: null,
